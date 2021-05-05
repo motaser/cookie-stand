@@ -55,17 +55,22 @@ Store.prototype.SalesCookies=function (){
     let container = document.getElementById("sales");
             let table = document.createElement('table');
            container.appendChild(table)
-           let tableheader = function(){
+           function tableheader (){
+
+           
                let trhead = document.createElement('tr');
                table.appendChild(trhead);
-                let thhead = document.createElement('tr');
-               table.appendChild(thhead);
-               thhead.textContent = ' ';
+              
+              let tshead =document.createElement('th');
+              trhead.appendChild(tshead);
+              tshead.textContent = ' ';
+
                for (let time = 0; time < hours.length; time++) {
+
+                   let tkhead =document.createElement('th');
+                   trhead.appendChild(tkhead);
                    
-                   let thhead = document.createElement('tr');
-                   table.appendChild(thhead);
-                thhead.textContent = hours[time];
+                tkhead.textContent = hours[time];
 
                    
                }
@@ -75,7 +80,8 @@ Store.prototype.SalesCookies=function (){
                thead.textContent = 'Daly location total'
 
            }
-
+           
+           
 
 Store.prototype.render = function(){
 
@@ -107,7 +113,7 @@ Store.prototype.render = function(){
 
 
 
-
+  tableheader();
 
   seatell .randomCustNum();
   seatell .SalesCookies();
@@ -128,3 +134,4 @@ Store.prototype.render = function(){
   lima .randomCustNum();
   lima .SalesCookies();
   lima .render();
+  
