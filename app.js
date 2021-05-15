@@ -135,3 +135,20 @@ Store.prototype.render = function(){
   lima .SalesCookies();
   lima .render();
   
+  let form =document.getElementById("cookies form");
+  form.addEventListener('submit', addStore);
+
+  function addStore(event) {
+      event.preventDefault();
+
+    
+      let name = event.target.name.value;
+     let MaxCustomersPerHour = parseInt(event.target.MaxCustomersPerHour.value);
+      let MinCustomersPerHour = parseInt(event.target.MinCustomersPerHour.value);
+       let averageCustCookies = parseInt(event.target.averageCustCookies.value);
+
+  }
+  
+  let newBranch = new  Store(name, MaxCustomersPerHour, MinCustomersPerHour, averageCustCookies,);
+
+  newBranch.render();
